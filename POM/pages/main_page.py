@@ -9,63 +9,74 @@ class MainPage(BasePage):
         super().__init__(driver)
 
     # elements
-    product_1 = (By.CSS_SELECTOR, "#item_0_title_link")
-    product_1_price = (By.XPATH, "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div/text()[2]")
-    product_2 = (By.CSS_SELECTOR, "#item_1_title_link")
-    product_2_price = (By.XPATH, "//*[@id='inventory_container']/div/div[3]/div[2]/div[2]/div/text()[2]")
-    product_3 = (By.CSS_SELECTOR, "#item_2_title_link")
-    product_3_price = (By.XPATH, "//*[@id='inventory_container']/div/div[5]/div[2]/div[2]/div/text()[2]")
-    product_4 = (By.CSS_SELECTOR, "#item_3_title_link")
-    product_4_price = (By.XPATH, "//*[@id='inventory_container']/div/div[6]/div[2]/div[2]/div/text()[2]")
-    product_5 = (By.CSS_SELECTOR, "#item_4_title_link")
-    product_5_price = (By.XPATH, "//*[@id='inventory_container']/div/div[1]/div[2]/div[2]/div/text()[2]")
-    product_6 = (By.CSS_SELECTOR, "#item_5_title_link")
-    product_6_price = (By.XPATH, "//*[@id='inventory_container']/div/div[4]/div[2]/div[2]/div/text()[2]")
+    # product_1 = (By.CSS_SELECTOR, "#item_0_title_link")
+    # product_1_price = (By.XPATH, "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div/text()[2]")
+    # product_2 = (By.CSS_SELECTOR, "#item_1_title_link")
+    # product_2_price = (By.XPATH, "//*[@id='inventory_container']/div/div[3]/div[2]/div[2]/div/text()[2]")
+    # product_3 = (By.CSS_SELECTOR, "#item_2_title_link")
+    # product_3_price = (By.XPATH, "//*[@id='inventory_container']/div/div[5]/div[2]/div[2]/div/text()[2]")
+    # product_4 = (By.CSS_SELECTOR, "#item_3_title_link")
+    # product_4_price = (By.XPATH, "//*[@id='inventory_container']/div/div[6]/div[2]/div[2]/div/text()[2]")
+    # product_5 = (By.CSS_SELECTOR, "#item_4_title_link")
+    # product_5_price = (By.XPATH, "//*[@id='inventory_container']/div/div[1]/div[2]/div[2]/div/text()[2]")
+    # product_6 = (By.CSS_SELECTOR, "#item_5_title_link")
+    # product_6_price = (By.XPATH, "//*[@id='inventory_container']/div/div[4]/div[2]/div[2]/div/text()[2]")
+
     CART_BTN = (By.CSS_SELECTOR, ".shopping_cart_link")
 
-    PRODUCTS_PRICES_LIST = (By.CSS_SELECTOR, ".inventory_item_description > div.pricebar > div")
-    PRODUCT_NAMES_LIST = (By.CSS_SELECTOR, ".inventory_item_name")
+    list_of_products = (By.CSS_SELECTOR, ".inventory_item_name")
+    list_of_prices = (By.CSS_SELECTOR, ".inventory_item_price")
+
+    # PRODUCTS_PRICES_LIST = (By.CSS_SELECTOR, ".inventory_item_description > div.pricebar > div")
+    # PRODUCT_NAMES_LIST = (By.CSS_SELECTOR, ".inventory_item_name")
     NUM_OF_PRODUCTS_IN_CART = (By.CSS_SELECTOR, "#shopping_cart_container > a > span")
 
-    def click_on_specific_product(self, option):
-        match option:
-            case 1:
-                self.click(self.product_1)
-            case 2:
-                self.click(self.product_2)
-            case 3:
-                self.click(self.product_3)
-            case 4:
-                self.click(self.product_4)
-            case 5:
-                self.click(self.product_5)
-            case 6:
-                self.click(self.product_6)
-            case _:
-                print("No product chosen")
+    # if there will not be a lot of products in the future:
+    # def click_on_specific_product(self, option):
+    #     match option:
+    #         case 1:
+    #             self.click(self.product_1)
+    #         case 2:
+    #             self.click(self.product_2)
+    #         case 3:
+    #             self.click(self.product_3)
+    #         case 4:
+    #             self.click(self.product_4)
+    #         case 5:
+    #             self.click(self.product_5)
+    #         case 6:
+    #             self.click(self.product_6)
+    #         case _:
+    #             print("No product chosen")
 
-    def return_price_main_page(self, option):
-        match option:
-            case 1:
-                price = self.get_text(self.product_1_price)
-                return price
-            case 2:
-                price = self.get_text(self.product_2_price)
-                return price
-            case 3:
-                price = self.get_text(self.product_3_price)
-                return price
-            case 4:
-                price = self.get_text(self.product_4_price)
-                return price
-            case 5:
-                price = self.get_text(self.product_5_price)
-                return price
-            case 6:
-                price = self.get_text(self.product_6_price)
-                return price
-            case _:
-                print("No product chosen")
+    # def return_price_main_page(self, option):
+    #     match option:
+    #         case 1:
+    #             price = self.get_text(self.product_1_price)
+    #             return price
+    #         case 2:
+    #             price = self.get_text(self.product_2_price)
+    #             return price
+    #         case 3:
+    #             price = self.get_text(self.product_3_price)
+    #             return price
+    #         case 4:
+    #             price = self.get_text(self.product_4_price)
+    #             return price
+    #         case 5:
+    #             price = self.get_text(self.product_5_price)
+    #             return price
+    #         case 6:
+    #             price = self.get_text(self.product_6_price)
+    #             return price
+    #         case _:
+    #             print("No product chosen")
+
+    def click_on_specific_product(self, i):
+        self.from_list_click(i, self.list_of_products)
+
+    def return_price_main_page(self, i):
+        self.return_price_from_list(i, self.list_of_prices)
 
     def click_on_cart(self):
         self.click(self.CART_BTN)
