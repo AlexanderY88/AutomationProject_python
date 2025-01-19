@@ -54,12 +54,19 @@ The configuration for browser options (like headless mode, screen resolution) is
 You can modify it based on your needs.
 
 Directory Structure
+
 ├── requirements.txt        # Python dependencies
+
 ├── tests/confitest.py      # Configuration file (browser settings, URLs)
+
 ├── tests/                  # Directory containing all test cases
+
 ├── pages/                  # Page Object Model (POM) classes
+
 ├── pages/base_page.py      # Base functions (like get_url, copy_text...)
+
 ├── allure-results/         # Folder for Allure reports
+
 └── README.md               # This file
 
 Acknowledgements
