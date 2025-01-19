@@ -8,7 +8,7 @@ class MainPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
-    # elements
+    # elements one by one
     # product_1 = (By.CSS_SELECTOR, "#item_0_title_link")
     # product_1_price = (By.XPATH, "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div/text()[2]")
     # product_2 = (By.CSS_SELECTOR, "#item_1_title_link")
@@ -24,11 +24,10 @@ class MainPage(BasePage):
 
     CART_BTN = (By.CSS_SELECTOR, ".shopping_cart_link")
 
+    # elements - lists
     list_of_products = (By.CSS_SELECTOR, ".inventory_item_name")
     list_of_prices = (By.CSS_SELECTOR, ".inventory_item_price")
 
-    # PRODUCTS_PRICES_LIST = (By.CSS_SELECTOR, ".inventory_item_description > div.pricebar > div")
-    # PRODUCT_NAMES_LIST = (By.CSS_SELECTOR, ".inventory_item_name")
     NUM_OF_PRODUCTS_IN_CART = (By.CSS_SELECTOR, "#shopping_cart_container > a > span")
 
     # if there will not be a lot of products in the future:
