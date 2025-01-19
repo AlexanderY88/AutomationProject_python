@@ -13,11 +13,11 @@ class Tests_Cart_Page:
         p1 = LoginPage(self.driver)
         p1.login("standard_user", "secret_sauce")  # 1. login
         p2 = MainPage(self.driver)
-        p2.click_on_product(2)  # 2. click on product
+        p2.click_on_specific_product(2)  # 2. click on product
         p3 = ProductPage(self.driver)
         p3.add_to_cart()  # 3. add product to the cart
         p3.back_to_products_page()  # 4. back t the products page
-        p2.click_on_product(3)  # 5. choose another product
+        p2.click_on_specific_product(3)  # 5. choose another product
         p3.add_to_cart()  # 6. add another product to the cart
         p3.back_to_products_page()  # 7. back to the products page
         p2.click_on_cart()  # 8. enter to the cart page
@@ -35,7 +35,7 @@ class Tests_Cart_Page:
         p1 = LoginPage(self.driver)
         p1.login("standard_user", "secret_sauce")  # 1. login
         p2 = MainPage(self.driver)
-        p2.click_on_product(2)  # 2. click on product
+        p2.click_on_specific_product(2)  # 2. click on product
         p3 = ProductPage(self.driver)
         p3.add_to_cart()  # 3. add product to the cart
         p2.click_on_cart()  # 4. enter to the cart page
@@ -56,7 +56,7 @@ class Tests_Cart_Page:
         p1 = LoginPage(self.driver)
         p1.login("standard_user", "secret_sauce")  # 1. login
         p2 = MainPage(self.driver)
-        p2.click_on_product(2)  # 2. click on a product
+        p2.click_on_specific_product(4)  # 2. click on a product
         p3 = ProductPage(self.driver)
         p3.add_to_cart()  # 3. add the product to the cart
         p2.click_on_cart()  # 4. navigate to the cart page
