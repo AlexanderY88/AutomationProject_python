@@ -23,7 +23,7 @@ class Tests_menu:
         p1 = LoginPage(self.driver)
         p1.standard_user_login()
         p2 = MainPage(self.driver)
-        p2.click_on_product(2)
+        p2.click_on_specific_product(2)
         p3 = Menu(self.driver)
         p3.open_menu()
         p3.click_all_items()
@@ -35,7 +35,7 @@ class Tests_menu:
         p1 = LoginPage(self.driver)
         p1.login("standard_user", "secret_sauce")  # 1. login
         p2 = MainPage(self.driver)
-        p2.click_on_product(2)
+        p2.click_on_specific_product(2)
         p3 = ProductPage(self.driver)
         p3.add_to_cart()
         p2.click_on_cart()  # navigate to the cart page
