@@ -9,6 +9,7 @@ from POM.pages.cart_page import CartPage
 from POM.pages.finish_order_confirmation_page import FinishOrderConfirmationPage
 
 
+
 class Test_ProductPage:
 
     def test_01(self):  # check price appears on the page
